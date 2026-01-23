@@ -14,6 +14,8 @@ class Segmentation ( Surface ):
         Surface.__init__(self, name, session)
 
         self.name = name
+        if volume is not None:
+            self.position = volume.scene_position
         if volume is None:
             self.mask = None
             debug(" - no mask?")
